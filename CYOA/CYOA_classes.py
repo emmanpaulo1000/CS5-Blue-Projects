@@ -137,3 +137,6 @@ class MainCharacter(Fightable):
 This is where we write our main code.
 What happens now?
 """
+
+
+print ("hello")
