@@ -133,3 +133,6 @@ class MainCharacter(Fightable):
             else:
                 self.stats[i] -= fight.getLoseEffect()[i]
 
+"""
+This is where we write our main code.
+"""
