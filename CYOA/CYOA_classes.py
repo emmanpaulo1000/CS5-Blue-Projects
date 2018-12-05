@@ -67,19 +67,19 @@ class Fight(Event):
    
 class Character:
 
-    def __init__(self, name, gender):
+    def __init__(self,name,gender):
         self.name   = name
         self.gender = gender
 
-    def getName(name):
-        self.name   = name
+    def getName(self):
+        return self.name
 
-    def getGender(gender):
-        self.gender = gender
+    def getGender(self):
+        return self.gender
 
 class Fightable(Character):
 
-    def __init__(self, health, strength, intelligence, charisma):
+    def __init__(self, name, gender, health, strength, intelligence, charisma):
 
         Character.__init__(self, name, gender)
 
@@ -102,9 +102,9 @@ class Fightable(Character):
 
 class MainCharacter(Fightable):
 
-    def __init__(self, challengeNumber):
+    def __init__(self, name, gender, health, strength, intelligence, charisma, challengeNumber):
 
-        Fightable.__init__(self, health, strength, intelligence, charisma)
+        Fightable.__init__(self, name, gender, health, strength, intelligence, charisma)
         
         self.challengeNumber = challengeNumber
 
@@ -139,4 +139,12 @@ What happens now?
 """
 
 
-print ("hello")
+MC = MainCharacter("Guy", "Male", 69, 69, 69, 69, 2)
+print(MC.getName())
+print("I am", MC.getGender())
+print(MC.getChallengeNumber())
+print(MC.getStats())
+
+print("Hello adventurer!")
+input()
+print("You are now going to go on an adventure ")
