@@ -31,11 +31,11 @@ class Opportunity(Event):
         self.successPercent = successPercent
         self.successEffects = successEffects
         self.failEffects    = failEffects
-        
+
 
     def getSuccessPercent(self):
         return self.successPercent
-    
+
     def getSuccessEffects(self):
         return self.successEffects
 
@@ -43,7 +43,7 @@ class Opportunity(Event):
         return self.failEffects
 
 class Fight(Event):
-    
+
     def __init__(self, enemy, statsCompared, winReward, loseEffect):
 
         Event.__init__(self, title)
@@ -64,7 +64,7 @@ class Fight(Event):
 
     def getLoseEffect(self):
         return self.loseEffect
-   
+
 class Character:
 
     def __init__(self,name,gender):
@@ -87,7 +87,7 @@ class Fightable(Character):
         self.stats        = [health, strength,
                             intelligence,
                             charisma]
-        
+
         self.winLine      = "You win!"
         self.loseLine     = "You lose."
 
@@ -105,7 +105,7 @@ class MainCharacter(Fightable):
     def __init__(self, name, gender, health, strength, intelligence, charisma, challengeNumber):
 
         Fightable.__init__(self, name, gender, health, strength, intelligence, charisma)
-        
+
         self.challengeNumber = challengeNumber
 
     def getChallengeNumber(self):
@@ -132,19 +132,3 @@ class MainCharacter(Fightable):
                 self.stats[i] += fight.getWinReward()[i]
             else:
                 self.stats[i] -= fight.getLoseEffect()[i]
-
-"""
-This is where we write our main code.
-What happens now?
-"""
-
-
-MC = MainCharacter("Guy", "Male", 69, 69, 69, 69, 2)
-print(MC.getName())
-print("I am", MC.getGender())
-print(MC.getChallengeNumber())
-print(MC.getStats())
-
-print("Hello adventurer!")
-input()
-print("You are now going to go on an adventure ")
